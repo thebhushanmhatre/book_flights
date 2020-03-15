@@ -10,7 +10,11 @@ class PnrsController < ApplicationController
   end
 
   def new
-    @pnr = Pnr.new
+    if current_user && current_user.is_admin
+      @pnr = Pnr.new
+    else
+      redirect_to pnrs_url, notice: "Sorry, you don't have the rights"
+    end
   end
 
   def edit

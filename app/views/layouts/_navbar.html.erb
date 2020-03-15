@@ -2,10 +2,10 @@
   <a class="navbar-brand" href="/"><h2>BookFlights</h2></a>
   
   <%= link_to "FlightConfigs", flight_configs_path, :class => "nav-link" %>
+  <%= link_to "FlightPath", flights_path, :class => "nav-link" %>
+  <%= link_to "SeatMap", seat_maps_path, :class => "nav-link" %>
   
   <% if current_user && current_user.is_admin %>
-    <%= link_to "FlightPath", flights_path, :class => "nav-link" %>
-    <%= link_to "SeatMap", seat_maps_path, :class => "nav-link" %>
     <%= link_to "Booking", bookings_path, :class => "nav-link" %>
     <%= link_to "PNR", pnrs_path, :class => "nav-link" %>
     <%= link_to "Users", user_index_path, :class => "nav-link" %>

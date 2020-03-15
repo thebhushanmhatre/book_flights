@@ -16,12 +16,12 @@
   <tbody>
     <% @seat_maps.each do |seat_map| %>
       <tr>
-        <td><%= seat_map.first_class_rows %></td>
-        <td><%= seat_map.first_class_seats_in_a_row %></td>
-        <td><%= seat_map.business_class_rows %></td>
-        <td><%= seat_map.business_class_seats_in_a_row %></td>
-        <td><%= seat_map.economy_class_rows %></td>
-        <td><%= seat_map.economy_class_seats_in_a_row %></td>
+        <td><%= seat_map.first_class_rows || "NA"  %></td>
+        <td><%= seat_map.first_class_seats_in_a_row || "NA"  %></td>
+        <td><%= seat_map.business_class_rows || "NA"  %></td>
+        <td><%= seat_map.business_class_seats_in_a_row || "NA"  %></td>
+        <td><%= seat_map.economy_class_rows || "NA"  %></td>
+        <td><%= seat_map.economy_class_seats_in_a_row || "NA"  %></td>
         <td><%= link_to 'Show', seat_map %></td>
         <% if current_user && current_user.is_admin %>
           <div>

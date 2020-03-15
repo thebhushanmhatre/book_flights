@@ -17,18 +17,18 @@
   <tbody>
     <% @flight_configs.each do |flight_config| %>
       <tr>
-        <td><%= flight_config.flight_origin %></td>
-        <td><%= flight_config.flight_destination %></td>
-        <td><%= flight_config.arrival_time %></td>
-        <td><%= flight_config.departure_time %></td>
-        <td><%= flight_config.first_class_price %></td>
-        <td><%= flight_config.business_class_price %></td>
-        <td><%= flight_config.economy_class_price %></td>
-        <td><%= link_to 'Show', flight_config %></td>
+        <td class="p-2 m-1"><%= flight_config.flight_origin %></td>
+        <td class="p-2 m-1"><%= flight_config.flight_destination %></td>
+        <td class="p-3 m-1"><%= flight_config.arrival_time %></td>
+        <td class="p-3 m-1"><%= flight_config.departure_time %></td>
+        <td class="p-2 m-1"><%= flight_config.first_class_price || "NA" %></td>
+        <td class="p-2 m-1"><%= flight_config.business_class_price || "NA" %></td>
+        <td class="p-2 m-1"><%= flight_config.economy_class_price || "NA" %></td>
+        <td class="p-2 m-1"><%= link_to 'Show', flight_config %></td>
         <% if current_user && current_user.is_admin %>
           <div>
-            <td><%= link_to 'Edit', edit_flight_config_path(flight_config) %></td>
-            <td><%= link_to 'Destroy', flight_config, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td class="p-2 m-1"><%= link_to 'Edit', edit_flight_config_path(flight_config) %></td>
+            <td class="p-2 m-1"><%= link_to 'Destroy', flight_config, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </div>
         <% end %>
       </tr>

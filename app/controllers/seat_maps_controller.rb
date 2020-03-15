@@ -10,7 +10,11 @@ class SeatMapsController < ApplicationController
   end
 
   def new
-    @seat_map = SeatMap.new
+    if current_user && current_user.is_admin
+      @seat_map = SeatMap.new
+    else
+      redirect_to seat_maps_url, notice: "Sorry, you don't have the rights"
+    end
   end
 
   def edit

@@ -10,7 +10,11 @@ class FlightsController < ApplicationController
   end
 
   def new
-    @flight = Flight.new
+    if current_user && current_user.is_admin
+      @flight = Flight.new
+    else
+      redirect_to flights_url, notice: "Sorry, you don't have the rights"
+    end
   end
 
   def edit

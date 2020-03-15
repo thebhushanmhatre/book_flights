@@ -10,7 +10,11 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.new
+    if current_user && current_user.is_admin
+      @booking = Booking.new
+    else
+      redirect_to bookings_url, notice: "Sorry, you don't have the rights"
+    end
   end
 
   def edit
