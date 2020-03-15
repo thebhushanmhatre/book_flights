@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First class rows:</strong>
+  <%= @seat_map.first_class_rows %>
+</p>
+
+<p>
+  <strong>First class seats in a row:</strong>
+  <%= @seat_map.first_class_seats_in_a_row %>
+</p>
+
+<% @seat_map.first_class_rows.times do %>
+  <div class="row container">
+    <% @seat_map.first_class_seats_in_a_row.times do %>
+      <div class='square card mr-3 bg-warning'></div><br>
+    <% end %>
+  </div>
+<% end %>
+
+<p>
+  <strong>Business class rows:</strong>
+  <%= @seat_map.business_class_rows %>
+</p>
+
+<p>
+  <strong>Business class seats in a row:</strong>
+  <%= @seat_map.business_class_seats_in_a_row %>
+</p>
+
+<% @seat_map.business_class_rows.times do %>
+  <div class="row container">
+    <% @seat_map.business_class_seats_in_a_row.times do %>
+      <div class='square card mr-3 bg-success'></div><br>
+    <% end %>
+  </div>
+<% end %>
+
+<p>
+  <strong>Economy class rows:</strong>
+  <%= @seat_map.economy_class_rows %>
+</p>
+
+<p>
+  <strong>Economy class seats in a row:</strong>
+  <%= @seat_map.economy_class_seats_in_a_row %>
+</p>
+
+<% @seat_map.economy_class_rows.times do %>
+  <div class="row container">
+    <% @seat_map.economy_class_seats_in_a_row.times do %>
+      <div class='square card mr-3 bg-info'></div><br>
+    <% end %>
+  </div>
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_seat_map_path(@seat_map) %> |
+<%= link_to 'Back', seat_maps_path %>

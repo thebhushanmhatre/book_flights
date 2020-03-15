@@ -1,0 +1,33 @@
+<h1>Pnrs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Seat class</th>
+      <th>Booking</th>
+      <th>Flight</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pnrs.each do |pnr| %>
+      <tr>
+        <td><%= pnr.seat_class %></td>
+        <td><%= pnr.booking_id %></td>
+        <td><%= pnr.flight_id %></td>
+        <td><%= link_to 'Show', pnr %></td>
+        <% if current_user && current_user.is_admin %>
+          <div>
+            <td><%= link_to 'Edit', edit_pnr_path(pnr) %></td>
+            <td><%= link_to 'Destroy', pnr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </div>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pnr', new_pnr_path %>

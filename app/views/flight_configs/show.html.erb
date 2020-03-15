@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Flight origin:</strong>
+  <%= @flight_config.flight_origin %>
+</p>
+
+<p>
+  <strong>Flight destination:</strong>
+  <%= @flight_config.flight_destination %>
+</p>
+
+<p>
+  <strong>Arrival time:</strong>
+  <%= @flight_config.arrival_time %>
+</p>
+
+<p>
+  <strong>Departure time:</strong>
+  <%= @flight_config.departure_time %>
+</p>
+
+<p>
+  <strong>First class price:</strong>
+  <%= @flight_config.first_class_price %>
+</p>
+
+<p>
+  <strong>Business class price:</strong>
+  <%= @flight_config.business_class_price %>
+</p>
+
+<p>
+  <strong>Economy class price:</strong>
+  <%= @flight_config.economy_class_price %>
+</p>
+
+<%= link_to 'Edit', edit_flight_config_path(@flight_config) %> |
+<%= link_to 'Back', flight_configs_path %>

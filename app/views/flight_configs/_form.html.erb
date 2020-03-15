@@ -1,0 +1,19 @@
+
+<%= simple_form_for(@flight_config) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :flight_origin %>
+    <%= f.input :flight_destination %>
+    <%= f.input :arrival_time %>
+    <%= f.input :departure_time %>
+    <%= f.input :first_class_price %>
+    <%= f.input :business_class_price %>
+    <%= f.input :economy_class_price %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

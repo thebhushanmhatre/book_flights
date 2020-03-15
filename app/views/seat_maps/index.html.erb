@@ -1,0 +1,39 @@
+<h1>Seat Maps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First class rows</th>
+      <th>First class seats in a row</th>
+      <th>Business class rows</th>
+      <th>Business class seats in a row</th>
+      <th>Economy class rows</th>
+      <th>Economy class seats in a row</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @seat_maps.each do |seat_map| %>
+      <tr>
+        <td><%= seat_map.first_class_rows %></td>
+        <td><%= seat_map.first_class_seats_in_a_row %></td>
+        <td><%= seat_map.business_class_rows %></td>
+        <td><%= seat_map.business_class_seats_in_a_row %></td>
+        <td><%= seat_map.economy_class_rows %></td>
+        <td><%= seat_map.economy_class_seats_in_a_row %></td>
+        <td><%= link_to 'Show', seat_map %></td>
+        <% if current_user && current_user.is_admin %>
+          <div>
+            <td><%= link_to 'Edit', edit_seat_map_path(seat_map) %></td>
+            <td><%= link_to 'Destroy', seat_map, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </div>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Seat Map', new_seat_map_path %>
