@@ -10,7 +10,7 @@ gem 'pg', group: :production # Added postgres and made it production only.
 gem 'rails_12factor'
 
 
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 gem 'sass-rails', '>= 6'
 gem 'bootstrap'
 gem 'webpacker', '~> 4.0'
